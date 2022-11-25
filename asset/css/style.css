@@ -1,0 +1,331 @@
+/* BASE */
+body {
+    margin: 0;
+    overflow-x: hidden;
+    --res: calc(0.01 * 10vmin);
+    font-family: 'Open Sans', Arial;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+fieldset {
+    border: none;
+}
+
+/* TYPOGRAPHY */
+h3 {
+    font-size: calc(25 * var(--res));
+}
+
+label {
+    font-size: calc(23 * var(--res));
+    font-weight: bold;
+}
+
+/* class to use for JS */
+.hook {
+    display: none;
+}
+
+.display {
+    display: flex;
+}
+
+.activeNavBtn {
+    background: #cb7857;
+    color: white;
+}
+
+.inactiveNavBtn {
+    background: white;
+    color: black;
+}
+
+/*HEADER*/
+
+header {
+    width: 100vw;
+    height: 12vh;
+    background: #cb7857;
+}
+
+header img {
+    width: 17vw;
+    margin-left: 2vw;
+}
+
+nav {
+    width: 18vw;
+    height: 77vh;
+    padding-top: 3vh;
+    border-right: 1px solid #cb7857;
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    font-size: calc(28 * var(--res));
+    text-transform: uppercase;
+    padding: 1vh 0 1vh 1vw;
+    cursor: pointer;
+    transition: all .01s ease .01s;
+    border-bottom: 1px solid rgba(115, 115, 115, 0.53);
+    position: relative;
+}
+
+nav a:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    top: 5vh;
+    left: 2vw;
+    background-color: #cb7857;
+    transition: all .35s;
+}
+
+nav a:hover::after {
+    width: 5vw;
+}
+
+nav a i {
+    font-size: calc(28 * var(--res));
+    margin-right: 0.5vw;
+}
+
+footer {
+    width: 100vw;
+    height: 10vh;
+    background: rgba(211, 211, 211, 0.62);
+    border-top: 1px solid #cb7857;
+}
+
+/* MAIN */
+
+main {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+div {
+    width: 70vw;
+}
+
+section {
+    width: 100vw;
+    height: 100%;
+    background: #D3D3D39E;
+    padding-left: 2vw;
+}
+
+section header {
+    background: none;
+    padding-top: 5vh;
+    height: 7vh;
+}
+
+
+/* CUSTOMER SECTION*/
+#customer button {
+    font-size: calc(18 * var(--res));
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    height: 5vh;
+}
+
+#customer button:hover {
+    font-size: calc(20 * var(--res));
+}
+
+.customerSectionButtonActive {
+    background: white;
+    font-weight: bolder;
+}
+
+article {
+    background: white;
+}
+
+#newCustomerForm fieldset, #updateContactForm fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+#newCustomerForm input, #updateContactForm input {
+    width: 25vw;
+    height: 4vh;
+    margin-bottom: 2vh;
+}
+
+#updateContactForm button, #newCustomerForm button {
+    position: relative;
+    left: 62vw;
+}
+
+#customer form .cancelBtn {
+    background: white;
+    color: #cb7857;
+    border: 2px solid #cb7857;
+    margin-right: 1vw;
+}
+
+.saveBtn {
+    background: #cb7857;
+    color: white;
+}
+
+/* PROJECT SECTION*/
+#projects article {
+    padding-bottom: 2vh;
+}
+
+#projects input {
+    width: 23vw;
+    height: 3vh;
+    font-size: calc(16 * var(--res));
+}
+
+#projectsLabel {
+    width: 60vw;
+    margin: 0;
+}
+
+#projectsLabel label:not(#projectHost) {
+    margin-right: 21vw;
+}
+
+#projectsSorting {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+}
+
+#projectsSorting h5, #projectsSorting select {
+    margin-right: 2vw;
+    height: 3vh;
+}
+
+#projectsButtonAdd {
+    margin-left: 30vw;
+    font-size: calc(15 * var(--res));
+    height: 4vh;
+    text-transform: uppercase;
+    padding: 0 1vw;
+    cursor: pointer;
+    transition: all .35s;
+    color: white;
+    background-color: #cb7857;
+    border: none;
+}
+
+#projectsButtonAdd:hover {
+    font-size: calc(17 * var(--res));
+}
+
+#projectsSorting button:not(#projectsButtonAdd) {
+    margin: 0 0.5vw;
+    height: 3vh;
+}
+
+#backToProjectListBtn{
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #cb7857;
+    font-size: calc(20*var(--res));
+    cursor: pointer;
+    margin: 2vh 0 3vh 1vw;
+    transition: all .35s;
+}
+#backToProjectListBtn:hover{
+    font-size: calc(23*var(--res));
+    border-bottom: 2px solid #cb7857;
+}
+
+#projectForm form{
+    display: flex;
+    width: 65vw;
+    flex-direction: column;
+    flex-basis: 15vh;
+    flex-wrap: wrap;
+    height: 33vh;
+    margin-left: 4vw;
+}
+
+#projectForm form input, #projectForm form select{
+    width: 20vw;
+}
+
+
+#projectForm form button{
+    width: 11vw;
+    height: 4vh;
+    border: none;
+    margin-top: 4vh;
+    margin-left: 10vw;
+    cursor: pointer;
+    font-size: calc(17*var(--res));
+}
+
+#projectForm form button:hover{
+    width: 12vw;
+    height: 4.5vh;
+    font-size: calc(19*var(--res))
+}
+/* HOST SECTION */
+
+
+#host button {
+    font-size: calc(18 * var(--res));
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    height: 5vh;
+}
+
+#host button:hover {
+    font-size: calc(20 * var(--res));
+}
+
+.hostSectionButtonActive {
+    background: white;
+    font-weight: bolder;
+}
+
+article {
+    background: white;
+}
+
+#newHostForm fieldset, #updateContactFormHost fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+#newHostForm input, #updateContactFormHost input {
+    width: 25vw;
+    height: 4vh;
+    margin-bottom: 2vh;
+}
+
+#updateContactFormHost button, #newHostForm button {
+    position: relative;
+    left: 62vw;
+}
+
+#Host form .cancelBtn {
+    background: white;
+    color: #cb7857;
+    border: 2px solid #cb7857;
+    margin-right: 1vw;
+}
+
+.saveBtn {
+    background: #cb7857;
+    color: white;
+}
+
+
