@@ -2,7 +2,7 @@
 
 {% block body %}
     <header>
-        <img src="../../asset/images/logo-mentalworks-blanc.png" alt="logo mentalworks">
+        <img src={{asset("assets/images/logo-mentalworks-blanc.png")}} alt="logo mentalworks">
     </header>
     <main>
         <nav>
@@ -38,7 +38,7 @@
                             <option value="15">15</option>
                         </select>
                         <article id="projectListContainer"></article>
-                        <button type="button"><</button>
+                        <button type="button"></button>
                         <button type="button">1</button>
                         <button type="button">2</button>
                         <button type="button">3</button>
@@ -149,12 +149,12 @@
     </main>
     <footer></footer>
 {% endblock %}
-{% block script %}
-    <script src="../../asset/script/navbar.js"></script>
-    <script src="../../asset/script/formCustomer.js"></script>
-    <script src="../../asset/script/formHost.js"></script>
-    <script src="../../asset/script/updateForm.js"></script>
-    <script src="../../asset/script/AsyncDataFetch.js"></script>
-    <script src="../../asset/script/formProject.js"></script>
-    <script src="../../asset/script/onload.js"></script>
+{% block javascripts %}
+    <script src={{ asset('assets/script/navbar.js') }}></script>
+    <script src={{ asset('assets/script/formCustomer.js') }}></script>
+    <script src={{ asset('assets/script/formHost.js') }}></script>
+    <script src={{ asset('assets/script/updateForm.js') }}></script>
+    <script src={{ asset('assets/script/AsyncDataFetch.js') }}></script>
+    <script src={{ asset('assets/script/formProject.js') }}></script>
+    <script src={{ asset('assets/script/onload.js') }}></script>
 {% endblock %}
