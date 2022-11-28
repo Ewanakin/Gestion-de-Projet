@@ -14,25 +14,22 @@ class Host
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private int $id;
 
     #[ORM\Column(length: 255)]
-    private ?string $code = null;
+    private string $code;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private string $name;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $notes = null;
+    private string $notes;
 
     #[ORM\ManyToOne(inversedBy: 'Host')]
-    private ?Project $project = null;
-
-    #[ORM\OneToMany(mappedBy: 'HostId', targetEntity: Project::class)]
-    private Collection $projects;
+    private Project $project;
 
     #[ORM\ManyToOne(inversedBy: 'HostId')]
-    private ?Contact $contact = null;
+    private Contact $contact;
 
     public function __construct()
     {

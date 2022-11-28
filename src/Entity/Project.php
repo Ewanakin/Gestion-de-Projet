@@ -14,31 +14,31 @@ class Project
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private int $id;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private string $name;
 
     #[ORM\Column(length: 255)]
-    private ?string $code = null;
+    private string $code;
 
     #[ORM\Column(length: 255)]
-    private ?string $lastpassFolder = null;
+    private string $lastpassFolder;
 
     #[ORM\Column(length: 255)]
-    private ?string $linkMockUps = null;
+    private string $linkMockUps;
 
     #[ORM\Column]
-    private ?bool $manageServer = null;
+    private bool $manageServer;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $notes = null;
+    private string $notes;
 
     #[ORM\ManyToOne(inversedBy: 'projects')]
-    private ?Host $HostId = null;
+    private Host $HostId;
 
     #[ORM\ManyToOne(inversedBy: 'projects')]
-    private ?Customer $CustomerId = null;
+    private Customer $CustomerId;
 
     public function getId(): ?int
     {

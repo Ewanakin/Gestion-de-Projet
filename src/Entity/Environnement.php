@@ -11,28 +11,28 @@ class Environnement
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private int $id;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private string $name;
 
     #[ORM\Column(length: 255)]
-    private ?string $link = null;
+    private string $link;
 
     #[ORM\Column(length: 255)]
-    private ?string $ipAdress = null;
+    private string $ipAdress;
 
     #[ORM\Column]
-    private ?int $sshPort = null;
+    private int $sshPort;
 
     #[ORM\Column(length: 255)]
-    private ?string $sshUserName = null;
+    private string $sshUserName;
 
     #[ORM\Column(length: 255)]
-    private ?string $phpmyadminLinkLink = null;
+    private string $phpmyadminLinkLink;
 
     #[ORM\Column]
-    private ?bool $ipRestriction = null;
+    private bool $ipRestriction;
 
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
     private ?Project $ProjectId = null;
