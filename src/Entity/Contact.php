@@ -25,15 +25,15 @@ class Contact
     private string $role;
 
     #[ORM\OneToMany(mappedBy: 'contact', targetEntity: Host::class)]
-    private Collection $HostId;
+    private Collection $host;
 
     #[ORM\OneToMany(mappedBy: 'contact', targetEntity: Customer::class)]
-    private Collection $CustomerId;
+    private Collection $customer;
 
     public function __construct()
     {
-        $this->HostId = new ArrayCollection();
-        $this->CustomerId = new ArrayCollection();
+        $this->host = new ArrayCollection();
+        $this->customer = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -77,22 +77,22 @@ class Contact
         return $this;
     }
 
-    public function addHostId(Host $hostId): self
+    public function addHost(Host $host): self
     {
-        if (!$this->HostId->contains($hostId)) {
-            $this->HostId->add($hostId);
-            $hostId->setContact($this);
+        if (!$this->host->contains($host)) {
+            $this->host->add($host);
+            $host->setContact($this);
         }
 
         return $this;
     }
 
-    public function removeHostId(Host $hostId): self
+    public function removeHost(Host $host): self
     {
-        if ($this->HostId->removeElement($hostId)) {
+        if ($this->HostId->removeElement($host)) {
             // set the owning side to null (unless already changed)
-            if ($hostId->getContact() === $this) {
-                $hostId->setContact(null);
+            if ($host->getContact() === $this) {
+                $host->setContact(null);
             }
         }
 
@@ -102,27 +102,27 @@ class Contact
     /**
      * @return Collection<int, Customer>
      */
-    public function getCustomerId(): Collection
+    public function getCustomer(): Collection
     {
-        return $this->CustomerId;
+        return $this->customer;
     }
 
-    public function addCustomerId(Customer $customerId): self
+    public function addCustomer(Customer $customer): self
     {
-        if (!$this->CustomerId->contains($customerId)) {
-            $this->CustomerId->add($customerId);
-            $customerId->setContact($this);
+        if (!$this->customer->contains($customer)) {
+            $this->customer->add($customer);
+            $customer->setContact($this);
         }
 
         return $this;
     }
 
-    public function removeCustomerId(Customer $customerId): self
+    public function removeCustomer(Customer $customer): self
     {
-        if ($this->CustomerId->removeElement($customerId)) {
+        if ($this->customer->removeElement($customer)) {
             // set the owning side to null (unless already changed)
-            if ($customerId->getContact() === $this) {
-                $customerId->setContact(null);
+            if ($customer->getContact() === $this) {
+                $customer->setContact(null);
             }
         }
 

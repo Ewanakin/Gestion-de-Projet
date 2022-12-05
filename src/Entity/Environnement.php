@@ -35,7 +35,7 @@ class Environnement
     private bool $ipRestriction;
 
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
-    private ?Project $ProjectId = null;
+    private ?Project $project = null;
 
     public function getId(): ?int
     {
@@ -126,14 +126,14 @@ class Environnement
         return $this;
     }
 
-    public function getProjectId(): ?Project
+    public function getProject(): ?Project
     {
-        return $this->ProjectId;
+        return $this->project;
     }
 
-    public function setProjectId(?Project $ProjectId): self
+    public function setProject(?Project $project): self
     {
-        $this->ProjectId = $ProjectId;
+        $this->project = $project;
 
         return $this;
     }

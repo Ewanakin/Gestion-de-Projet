@@ -101,7 +101,7 @@ class Host
     {
         if (!$this->projects->contains($project)) {
             $this->projects->add($project);
-            $project->setHostId($this);
+            $project->setHost($this);
         }
 
         return $this;
@@ -111,8 +111,8 @@ class Host
     {
         if ($this->projects->removeElement($project)) {
             // set the owning side to null (unless already changed)
-            if ($project->getHostId() === $this) {
-                $project->setHostId(null);
+            if ($project->getHost() === $this) {
+                $project->setHost(null);
             }
         }
 

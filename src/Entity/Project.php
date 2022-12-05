@@ -35,10 +35,10 @@ class Project
     private string $notes;
 
     #[ORM\ManyToOne(inversedBy: 'projects')]
-    private Host $HostId;
+    private Host $host;
 
     #[ORM\ManyToOne(inversedBy: 'projects')]
-    private Customer $CustomerId;
+    private Customer $customer;
 
     public function getId(): ?int
     {
@@ -117,26 +117,26 @@ class Project
         return $this;
     }
 
-    public function getHostId(): ?Host
+    public function getHost(): ?Host
     {
-        return $this->HostId;
+        return $this->host;
     }
 
-    public function setHostId(?Host $HostId): self
+    public function setHost(?Host $host): self
     {
-        $this->HostId = $HostId;
+        $this->host = $host;
 
         return $this;
     }
 
-    public function getCustomerId(): ?Customer
+    public function getCustomer(): ?Customer
     {
-        return $this->CustomerId;
+        return $this->customer;
     }
 
-    public function setCustomerId(?Customer $CustomerId): self
+    public function setCustomer(?Customer $customer): self
     {
-        $this->CustomerId = $CustomerId;
+        $this->customer = $customer;
 
         return $this;
     }
